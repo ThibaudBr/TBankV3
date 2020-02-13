@@ -8,8 +8,23 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
+    <groupId>com.TBankCorp</groupId>
     <artifactId>TBankV3-Business</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.TBankCorp</groupId>
+            <artifactId>TBankV3-Consumer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.TBankCorp</groupId>
+            <artifactId>TBankV3-Model</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+        </dependency>
+    </dependencies>
 </project>

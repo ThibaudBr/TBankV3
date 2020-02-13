@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class UtilBean {
+public class Util {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,19 +16,19 @@ public class UtilBean {
 	private String mail;
 	private String idConnexion;
 	private String password;
-	private String Statut;
+	private String statut;
 
-	public UtilBean(int idUtil, String name, int age, String mail, String idConnexion, String password, String statut) {
+	public Util(int idUtil, String name, int age, String mail, String idConnexion, String password, String statut) {
 		this.idUtil = idUtil;
 		this.name = name;
 		this.age = age;
 		this.mail = mail;
 		this.idConnexion = idConnexion;
 		this.password = password;
-		Statut = statut;
+		statut = statut;
 	}
 
-	public UtilBean(){}
+	public Util(){}
 
 	public int getIdUtil() {
 		return idUtil;
@@ -67,9 +67,9 @@ public class UtilBean {
 		this.password = password;
 	}
 	public String getStatut() {
-		return Statut;
+		return statut;
 	}
 	public void setStatut(String statut) {
-		Statut = statut;
+		this.statut = statut;
 	}
 }

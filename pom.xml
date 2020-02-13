@@ -2,6 +2,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<packaging>pom</packaging>
+
+	<!-- MODULES TBANKV3 -->
+	<modules>
+		<module>TBankV3-Webapp</module>
+		<module>TBankV3-Business</module>
+		<module>TBankV3-Consumer</module>
+		<module>TBankV3-Model</module>
+	</modules>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -17,6 +27,32 @@
 	<properties>
 		<java.version>13</java.version>
 	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- Modules -->
+			<dependency>
+				<groupId>com.TBankCorp</groupId>
+				<artifactId>TBankV3-WebApp</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.TBankCorp</groupId>
+				<artifactId>TBankV3-Business</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.TBankCorp</groupId>
+				<artifactId>TBankV3-Consumer</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.TBankCorp</groupId>
+				<artifactId>TBankV3-Model</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<dependencies>
 		<!-- SPRING BOOT -->
@@ -66,21 +102,6 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-
 	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<jvmArguments>
-						-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005
-					</jvmArguments>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 
 </project>

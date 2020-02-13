@@ -15,14 +15,14 @@ public class Account {
 	private int money;
 	private String name;
 
-	public AccountBean(int idAccount, int idUtil, int money, String name) {
+	public Account(int idAccount, int idUtil, int money, String name) {
 		this.idAccount = idAccount;
 		this.idUtil = idUtil;
 		this.money = money;
 		this.name = name;
 	}
 
-	public AccountBean(){}
+	public Account(){}
 
 	public int getIdAccount() {
 		return idAccount;

@@ -1,4 +1,4 @@
-package org.TBank.Model.exception;
+package com.TBankCorp.Model.exception;
 
 public class BeanException extends Exception {
 

@@ -1,11 +1,11 @@
 package com.TBankCorp.Consumer.repository;
 
+import com.TBankCorp.Model.beans.Account;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import com.TBankCorp.Model.beans.Util;
 
 //@Repository
-public interface ICDRepository
-//        extends CrudRepository<Util, Long>
+public interface AccountRepository
+//        extends CrudRepository<Account, Long>
 {
 }
