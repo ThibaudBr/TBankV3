@@ -1,15 +1,15 @@
 package com.TBankCorp.Webapp.controller;
 
-import com.TBankCorp.Business.contract.ManagerFactory;
+import com.TBankCorp.Consumer.repository.TransactionRepository;
+import org.springframework.context.annotation.Bean;
 
 abstract class AbstractController {
 
-    private static ManagerFactory managerFactory;
-
-    protected static ManagerFactory getManagerFactory() {
-        return managerFactory;
+    private static TransactionRepository transactionRepository;
+    protected static TransactionRepository getTransactionRepository() {
+        return transactionRepository;
     }
-    public static void setManagerFactory(ManagerFactory pManagerFactory) {
-        managerFactory = pManagerFactory;
+    public static void setTransactionRepository(TransactionRepository pTransactionRepository) {
+        transactionRepository = pTransactionRepository;
     }
 }

@@ -18,6 +18,24 @@ public class Transaction {
 	private String date;
 	private int amount;
 
+	public Transaction(){
+	}
+
+	@Override
+	public String toString() {
+		return "Transaction{" +
+				"idTransaction=" + idTransaction +
+				", idUtilInit=" + idUtilInit +
+				", idAccountInit=" + idAccountInit +
+				", idUtilEnd=" + idUtilEnd +
+				", idAccountEnd=" + idAccountEnd +
+				", date='" + date + '\'' +
+				", amount=" + amount +
+				'}';
+	}
+
+
+
 	public int getIdTransaction() {
 		return idTransaction;
 	}

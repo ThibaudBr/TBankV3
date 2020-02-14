@@ -15,6 +15,18 @@ public class Account {
 	private int money;
 	private String name;
 
+	@Override
+	public String toString() {
+		return "Account{" +
+				"idAccount=" + idAccount +
+				", idUtil=" + idUtil +
+				", money=" + money +
+				", name='" + name + '\'' +
+				'}';
+	}
+
+
+
 	public Account(int idAccount, int idUtil, int money, String name) {
 		this.idAccount = idAccount;
 		this.idUtil = idUtil;

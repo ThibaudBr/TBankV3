@@ -18,6 +18,19 @@ public class Util {
 	private String password;
 	private String statut;
 
+	@Override
+	public String toString() {
+		return "Util{" +
+				"idUtil=" + idUtil +
+				", name='" + name + '\'' +
+				", age=" + age +
+				", mail='" + mail + '\'' +
+				", idConnexion='" + idConnexion + '\'' +
+				", password='" + password + '\'' +
+				", statut='" + statut + '\'' +
+				'}';
+	}
+
 	public Util(int idUtil, String name, int age, String mail, String idConnexion, String password, String statut) {
 		this.idUtil = idUtil;
 		this.name = name;
