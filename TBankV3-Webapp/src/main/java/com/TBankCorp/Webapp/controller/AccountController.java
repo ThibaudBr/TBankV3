@@ -18,7 +18,7 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200")
 public class AccountController extends AbstractController {
 
-    private Logger log = LoggerFactory.getLogger(ICDController.class);
+
 
     @Autowired
     private TransactionRepository transactionRepository;
@@ -31,6 +31,11 @@ public class AccountController extends AbstractController {
 
         int idAccount = Integer.parseInt(sIdAccount);
         return (List<Transaction>) transactionRepository.findByIdAccountInitAndIdAccountEnd(idAccount,idAccount);
+    }
+
+    @GetMapping("/getAccountUtil/{idUtil}")
+    public List<Account> getAccountWithIdUtil(@PathVariable int idUtil){
+        return (List<Account>) accountRepository.findAllAccountWithIdUtil(idUtil);
     }
 
     @PostMapping("/deleteAccount/{sIdAccount}")
@@ -49,4 +54,6 @@ public class AccountController extends AbstractController {
         account.setIdUtil(idSession);
         return account;
     }
+
+
 }

@@ -1,9 +1,11 @@
 package com.TBankCorp.Webapp.controller;
 
 
+import com.TBankCorp.Consumer.repository.ICDRepository;
 import com.TBankCorp.Model.beans.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +15,15 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "http://localhost:4200")
 public class ICDController extends AbstractController {
 
+    private Logger log = LoggerFactory.getLogger(ICDController.class);
 
+    @Autowired
+    private ICDRepository icdRepository;
+
+//    @PostMapping("/signIn")
+//    public Util signInUtil(@RequestBody String mail, @RequestBody String password){
+//        return (Util) icdRepository.findUtilWith
+//    }
 //    private Logger log = LoggerFactory.getLogger(ICDController.class);
 //
 //

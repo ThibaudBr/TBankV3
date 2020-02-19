@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 import com.TBankCorp.Model.beans.Util;
 
 //@Repository
-public interface ICDRepository
-//        extends CrudRepository<Util, Long>
+public interface ICDRepository extends CrudRepository<Util, Long>
 {
 }
