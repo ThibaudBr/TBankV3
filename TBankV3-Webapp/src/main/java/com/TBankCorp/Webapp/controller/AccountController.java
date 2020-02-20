@@ -18,7 +18,7 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200")
 public class AccountController extends AbstractController {
 
-
+    private Logger log = LoggerFactory.getLogger(AccountController.class);
 
     @Autowired
     private TransactionRepository transactionRepository;
@@ -38,10 +38,9 @@ public class AccountController extends AbstractController {
         return (List<Account>) accountRepository.findAllAccountWithIdUtil(idUtil);
     }
 
-    @PostMapping("/deleteAccount/{sIdAccount}")
-    public void delete(@PathVariable String sIdAccount){
-        long idAccount = Long.parseLong(sIdAccount);
-        accountRepository.deleteById((long) idAccount);
+    @PostMapping("/deleteAccount")
+    public void delete(@RequestBody int idAccount){
+        accountRepository.deleteById( idAccount);
     }
 
     @PostMapping("/addAccount/{idSession}")
@@ -50,6 +49,10 @@ public class AccountController extends AbstractController {
         accountRepository.save(accountFinal);
     }
 
+    @GetMapping("/getAccountWithoutUtil/{idUtil}")
+    public List<Account> getAllAccountWithoutUtil(@PathVariable int idUtil) {
+        return (List<Account>) accountRepository.findAllAccountWithoutIdUtil(idUtil);
+    }
     Account buildAccount(int idSession, Account account){
         account.setIdUtil(idSession);
         return account;

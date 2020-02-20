@@ -20,16 +20,15 @@ public class ICDController extends AbstractController {
     @Autowired
     private ICDRepository icdRepository;
 
-//    @PostMapping("/signIn")
-//    public Util signInUtil(@RequestBody String mail, @RequestBody String password){
-//        return (Util) icdRepository.findUtilWith
-//    }
-//    private Logger log = LoggerFactory.getLogger(ICDController.class);
-//
-//
-//    // Inscription d'un utilisateur dans la base de données
-//    @PostMapping(path= "/addUtil")
-//    public void signIn(@RequestBody Util util) {
-//        getManagerFactory().getIcdManager().addUtil(util);
-//    }
+    @PostMapping("/signIn/{idConnexion}")
+    public Util signInUtil(@PathVariable String idConnexion, @RequestBody String password){
+        return (Util) icdRepository.findUtilWithMailAndPassword(idConnexion,password);
+    }
+
+    @PostMapping("/signUp")
+    public Util signUp(@RequestBody Util util ){
+      return  icdRepository.save(util);
+    }
+
+
 }
